@@ -1,5 +1,5 @@
-# pushpop-starter
+# github-trends
 
-Clone this repository to start writing and deploying your own Pushpop jobs.
+Fork of pushpop-starter that monitors Github repository trends over time.
 
-See more documentation on the main [Pushpop repository](https://github.com/pushpop-project/pushpop).
+Make sure to set `KEEN_PROJECT_ID` and `KEEN_WRITE_KEY` on the environment.
