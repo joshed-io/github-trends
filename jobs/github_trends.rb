@@ -25,7 +25,7 @@ require 'pushpop-github'
     end
 
     step do |repository, _|
-      Keen.publish("repositories_snapshots", repository.to_hash)
+      Keen.publish("repository_snapshots", repository.to_hash)
       puts "Logged #{repo} stats"
     end
 
