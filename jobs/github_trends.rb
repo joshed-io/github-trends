@@ -2,31 +2,23 @@ require 'keen'
 require 'pushpop-github'
 
 %w(
-  pushpop-project/pushpop
-  pushpop-project/pushpop-starter
-  pushpop-project/pushpop-recipes
-  dzello/mongoid_alize
-  dzello/aud
-  dzello/four
-  keenlabs/keen-gem
-  keenlabs/keen-js
-  keenlabs/pingpong
-).each do |repo|
-
-  github_user, github_repo = lambda { repo.split('/') }.call
+  dzello
+  keenlabs
+  pushpop-project
+).each do |organization_name|
 
   job do
 
     every 1.hour
 
-    github do
-      user        github_user
-      repository  github_repo
+    step do
+      # todo add this functionality into the plugin
+      Github::Repos.new(user: organization_name).list(per_page: 1000)
     end
 
-    step do |repository, _|
-      Keen.publish("repository_snapshots", repository.to_hash)
-      puts "Logged #{repo} stats"
+    step do |repositories, _|
+      Keen.publish_batch(repository_snapshots: repositories.map(&:to_hash))
+      puts "Logged #{repositories.size} repositories for #{organization_name}"
     end
 
   end

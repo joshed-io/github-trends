@@ -4,13 +4,14 @@ Do analytics on Github repository trends over time.
 
 Uses [Pushpop](https://github.com/pushpop-project/pushpop), and the [Github Plugin](https://github.com/pushpop-project/pushpop-github).
 
-Make sure to set `KEEN_PROJECT_ID` and `KEEN_WRITE_KEY` on the environment.
+A [Keen IO](https://keen.io) account is required. Make sure to set `KEEN_PROJECT_ID` and `KEEN_WRITE_KEY` on the environment.
 If you're using foreman, drop them in a `.env` file.
 
 ### Usage
 
-The list of repositories to watch is in [jobs/github_trends.rb](jobs/github_trends.rb).
-Add and subtract to this list at your leisure.
+The list of organizations to watch is specified in [jobs/github_trends.rb](jobs/github_trends.rb).
+Add and subtract from this list at your leisure.
+All public repositories in those organizations will be included.
 
 To run:
 
@@ -18,6 +19,6 @@ To run:
 $ foreman run rake jobs:run
 ```
 
-Every hour the repository stats will be pulled from the Github API and logged as an event to Keen IO.
+Every hour the repository stats will be pulled from the Github API and logged as events to Keen IO (1 per repository).
 Once you have some data collected you can use the Keen IO API and workbench to do analysis,
 or create a dashboard that highlights the metrics you care about.
