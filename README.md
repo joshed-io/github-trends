@@ -16,7 +16,7 @@ $ cd github-trends
 $ bundle install
 ```
 
-github-trends uses [Keen IO](https://keen.io) to store repository changes over time. Keen IO's free plan is more than enough to track a large number of repositories, so head over and sign up now.
+github-trends uses [Keen IO](https://keen.io) to store repository changes over time. Keen IO's free plan is enough to track a bunch of repositories, so head over and sign up now.
 
 Once you have a Keen IO account, create a new project and copy the project information and API keys into a `.env` file in the project root, like so:
 
@@ -26,9 +26,9 @@ KEEN_WRITE_KEY=xxxxxxxxxxxxxx
 KEEN_READ_KEY=zzzzzzzzzzzzzzz
 ```
 
-Next, modify the list of organizations whose repositories you'd like to visualize. This list is specified in [jobs/github_trends.rb](jobs/github_trends.rb). All public repositories from each organization will be included.
+Next, modify the list of organizations whose repositories you'd like to visualize. This list is specified in [jobs/github_trends.rb](jobs/github_trends.rb), and the default is just to track the [github organization](https://github.com/github). All public repositories from each organization will be included.
 
-To start the data collection and web dashboard processes simply run:
+To start the combined data collection and web dashboard process run:
 
 ``` shell
 $ foreman start
@@ -50,7 +50,7 @@ $ git commit -am 'Added my organizations'
 $ heroku create
 
 # push vars in .env file to app config; requires heroku-config plugin
-$ heroku config:push 
+$ heroku config:push
 
 # deploy
 $ git push heroku master

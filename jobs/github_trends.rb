@@ -1,9 +1,10 @@
 require 'keen'
 require 'pushpop-github'
 
-%w(
-  github
-).each do |organization_name|
+# add the organizations you'd like to track here
+organizations = ["github"]
+
+organizations.each do |organization_name|
 
   job do
 
