@@ -9,6 +9,5 @@ gem 'pushpop-github'
 gem 'pushpop-keen'
 
 group :development, :test do
-  gem 'rake'
   gem 'foreman'
 end
