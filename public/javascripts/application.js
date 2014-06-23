@@ -11,7 +11,7 @@ Keen.ready(function(){
     targetProperty: "stargazers_count",
     interval: "daily",
     groupBy: "full_name",
-    timeframe: "last_210_hours"
+    timeframe: "last_168_hours"
   });
 
   keenClient.draw(repos_timeline, document.getElementById("chart-01"), {
