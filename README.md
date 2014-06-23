@@ -35,7 +35,7 @@ $ foreman start
 ```
 
 Every hour the repository stats will be pulled from the Github API and logged as events to Keen IO (1 per repository).
-Once you have some data collected you can use the Keen IO API and workbench to do analysis or use the included dashboard. The included dashboard currently shows the number of Github stars for each repository over. The plan is to add more visualizations in the future.
+Once you have some data collected you can use the Keen IO API and workbench to do analysis or use the included dashboard. The included dashboard currently shows the number of Github stars for each repository. The plan is to add more visualizations in the future.
 
 ### Deploy
 
