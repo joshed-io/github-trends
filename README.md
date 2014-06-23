@@ -26,7 +26,16 @@ KEEN_WRITE_KEY=xxxxxxxxxxxxxx
 KEEN_READ_KEY=zzzzzzzzzzzzzzz
 ```
 
-Next, modify the list of organizations whose repositories you'd like to visualize. This list is specified in [jobs/github_trends.rb](jobs/github_trends.rb), and the default is just to track the [github organization](https://github.com/github). All public repositories from each organization will be included.
+Next, modify the list of organizations whose repositories you'd like to track in [jobs/github_trends.rb](jobs/github_trends.rb):
+
+``` ruby
+# add the organizations you'd like to track here
+organizations = ["github"]
+
+# ...
+```
+
+The default is to track only the [github organization](https://github.com/github). Note that all public repositories from each organization will be included.
 
 To start the combined data collection and web dashboard process run:
 
