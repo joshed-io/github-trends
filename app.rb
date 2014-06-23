@@ -12,4 +12,10 @@ class App < Sinatra::Base
     }
   end
 
+  require_relative 'jobs/github_trends'
+  Pushpop.schedule
+  Thread.new {
+    Clockwork.manager.run
+  }
+
 end
