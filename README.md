@@ -1,10 +1,10 @@
 # github-trends
 
-Record your organization's Github repository statistics over time. Visualize the data using the included Sinatra-powered dashboard:
+Record your organization's Github repository statistics over time. Visualize the data using the included Sinatra-served dashboard:
 
-![Example Dashboard](http://f.cl.ly/items/0c3h3l2E1J1z1m1u3l1A/github_trends.png)
+![Example Github Trends Dashboard](http://f.cl.ly/items/0c3h3l2E1J1z1m1u3l1A/github_trends.png)
 
-The included dashboard can be extended to show more metrics using basic JavaScript and HTML. See the [keen-js 3.0](https://github.com/keenlabs/keen-js) for more details.
+This dashboard shows the number of stars each repository has over time. More metrics can be added using basic JavaScript and HTML. To learn how see the [keen-js documentation](https://github.com/keenlabs/keen-js).
 
 ### Installation
 
