@@ -11,7 +11,7 @@ Keen.ready(function(){
     targetProperty: "stargazers_count",
     interval: "daily",
     groupBy: "full_name",
-    timeframe: "last_30_days"
+    timeframe: "this_30_days"
   });
 
   keenClient.draw(repos_timeline, document.getElementById("chart-01"), {
@@ -26,7 +26,7 @@ Keen.ready(function(){
         top: "5%",
         width: "80%"
       },
-      isStacked: true
+      isStacked: false
     }
   });
 
@@ -34,7 +34,7 @@ Keen.ready(function(){
     eventCollection: "repository_snapshots",
     targetProperty: "stargazers_count",
     groupBy: "full_name",
-    timeframe: "last_1_hour"
+    timeframe: "this_1_hour"
   });
 
   keenClient.draw(repos_now, document.getElementById("chart-02"), {

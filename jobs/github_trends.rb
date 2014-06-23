@@ -2,9 +2,7 @@ require 'keen'
 require 'pushpop-github'
 
 %w(
-  dzello
-  keenlabs
-  pushpop-project
+  github
 ).each do |organization_name|
 
   job do
@@ -13,7 +11,7 @@ require 'pushpop-github'
 
     step do
       # todo add this functionality into the plugin
-      Github::Repos.new(user: organization_name).list(per_page: 1000)
+      Github::Repos.new(user: organization_name).list(auto_pagination: true)
     end
 
     step do |repositories, _|
