@@ -11,7 +11,7 @@ Keen.ready(function(){
     targetProperty: "stargazers_count",
     interval: "daily",
     groupBy: "full_name",
-    timeframe: "this_210_hours"
+    timeframe: "last_210_hours"
   });
 
   keenClient.draw(repos_timeline, document.getElementById("chart-01"), {
@@ -34,7 +34,7 @@ Keen.ready(function(){
     eventCollection: "repository_snapshots",
     targetProperty: "stargazers_count",
     groupBy: "full_name",
-    timeframe: "this_1_hour"
+    timeframe: "last_1_hour"
   });
 
   keenClient.draw(repos_now, document.getElementById("chart-02"), {
