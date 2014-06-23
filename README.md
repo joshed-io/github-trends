@@ -52,12 +52,12 @@ Once you have some data collected you can use the Keen IO API and workbench to d
 
 ### Deployment
 
-A Procfile is included so deploying to Heroku is easy. You will want to deploy it so it runs in an ongoing manner, thus collecting the data needed to produce the dashboard.
+A Procfile is included so deploying to Heroku is easy. You will want to deploy this since it needs to run in an ongoing manner to collect the data needed to produce the dashboard.
 
 Here are basic instructions to create a new Heroku app and deploy it:
 
 ``` shell
-# make sure to commit any customizations you made
+# make sure to commit any changes you made
 $ git commit -am 'Added my organizations'
 
 $ heroku create
@@ -71,6 +71,8 @@ $ git push heroku master
 # open the web interface
 $ heroku open
 ```
+
+Note - You might not see some data right away. That's because some of the query timeframes are set to end at the previous hour (not the current one). If you don't see any data wait an hour or head over to the Keen IO workbench and analyze it there.
 
 ### Credits
 
