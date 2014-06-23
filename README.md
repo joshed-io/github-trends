@@ -2,6 +2,8 @@
 
 Track and visualize your organization's Github repository statistics over time.
 
+![Example Dashboard](http://f.cl.ly/items/0c3h3l2E1J1z1m1u3l1A/github_trends.png)
+
 Uses [Pushpop](https://github.com/pushpop-project/pushpop), and the [Github Pushpop Plugin](https://github.com/pushpop-project/pushpop-github).
 
 ### Usage
