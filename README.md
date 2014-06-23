@@ -1,12 +1,12 @@
 # github-trends
 
-Track and visualize your organization's Github repository statistics over time.
+Record your organization's Github repository statistics over time. Visualize the data using the included Sinatra-powered dashboard:
 
 ![Example Dashboard](http://f.cl.ly/items/0c3h3l2E1J1z1m1u3l1A/github_trends.png)
 
-Uses [Pushpop](https://github.com/pushpop-project/pushpop), and the [Github Pushpop Plugin](https://github.com/pushpop-project/pushpop-github).
+The included dashboard can be extended to show more metrics using basic JavaScript and HTML. See the [keen-js 3.0](https://github.com/keenlabs/keen-js) for more details.
 
-### Usage
+### Installation
 
 Assumes a working Ruby 1.9+ environment.
 
@@ -18,7 +18,7 @@ $ cd github-trends
 $ bundle install
 ```
 
-github-trends uses [Keen IO](https://keen.io) to store repository changes over time. Keen IO's free plan is enough to track a bunch of repositories, so head over and sign up now.
+github-trends uses [Keen IO](https://keen.io) to store repository data as it changes over time. Keen IO's free plan is enough to track a bunch of repositories, so head over and [signup](https://keen.io/signup) now.
 
 Once you have a Keen IO account, create a new project and copy the project information and API keys into a `.env` file in the project root, like so:
 
@@ -28,7 +28,7 @@ KEEN_WRITE_KEY=xxxxxxxxxxxxxx
 KEEN_READ_KEY=zzzzzzzzzzzzzzz
 ```
 
-Next, modify the list of organizations whose repositories you'd like to track in [jobs/github_trends.rb](jobs/github_trends.rb):
+Next, modify the list of organizations you want to track. The list is in [jobs/github_trends.rb](jobs/github_trends.rb), just look for this line:
 
 ``` ruby
 # add the organizations you'd like to track here
@@ -39,6 +39,8 @@ organizations = ["github"]
 
 The default is to track only the [github organization](https://github.com/github). Note that all public repositories from each organization will be included.
 
+### Usage
+
 To start the combined data collection and web dashboard process run:
 
 ``` shell
@@ -46,9 +48,9 @@ $ foreman start
 ```
 
 Every hour the repository stats will be pulled from the Github API and logged as events to Keen IO (1 per repository).
-Once you have some data collected you can use the Keen IO API and workbench to do analysis or use the included dashboard. The included dashboard currently shows the number of Github stars for each repository. The plan is to add more visualizations in the future.
+Once you have some data collected you can use the Keen IO API and workbench to do analysis or use the included dashboard. The included dashboard currently shows the number of Github stars for each repository. The plan is to add more visualizations in the future. Pitch in if this is interesting to you!
 
-### Deploy
+### Deployment
 
 A Procfile is included so deploying to Heroku is easy. You will want to deploy it so it runs in an ongoing manner, thus collecting the data needed to produce the dashboard.
 
@@ -69,3 +71,9 @@ $ git push heroku master
 # open the web interface
 $ heroku open
 ```
+
+### Credits
+
+github-trends uses [Pushpop](https://github.com/pushpop-project/pushpop), and the [Github Pushpop Plugin](https://github.com/pushpop-project/pushpop-github).
+
+The github-trends dashboard is based on the [dashboard sinatra starter](https://github.com/keenlabs/dashboard-starter-sinatra) kit from Keen IO.
